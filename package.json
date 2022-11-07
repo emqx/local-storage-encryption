@@ -1,0 +1,33 @@
+{
+  "name": "@emqx/local-storage-encryption",
+  "version": "0.1.0",
+  "description": "Obfuscate key-value pairs in localStorage",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/local-storage-encryption.umd.js",
+  "module": "./dist/local-storage-encryption.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/local-storage-encryption.es.js",
+      "require": "./dist/local-storage-encryption.umd.js"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "test": "vitest"
+  },
+  "keywords": [
+    "emqx"
+  ],
+  "author": "Yue Yang <g1enyy0ung@gmail.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "crypto-js": "^4.1.1"
+  },
+  "devDependencies": {
+    "vite": "^3.2.2",
+    "vitest": "^0.24.5"
+  }
+}
