@@ -65,6 +65,9 @@ decrypt(keyToGetUserInfo).then((userInfo) => {
   // { username: 'admin', password: '123456' }
   console.log(userInfo)
 })
+
+// Clear the encrypted data from localStorage.
+clear(keyToGetUserInfo)
 ```
 
 ## API
@@ -127,6 +130,10 @@ It will also return a `Promise` that resolves to the decrypted data.
  * @returns {Promise<any>}
  */
 ```
+
+### clear
+
+`clear` is used to clear the encrypted data from localStorage.
 
 ## License
 
