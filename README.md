@@ -75,16 +75,16 @@ decrypt(keyToGetUserInfo).then((userInfo) => {
 
 It will return a `Promise` that resolves to the encrypted data.
 
-The principle it uses is to encrypt two keys first with the `key` in the provider, one for the key to get the encrypted data from localStorage, and the other for the data to be encrypted.
+The principle it uses is to encrypt two keys first with the `key` in the provider (provided key), one for the key to get the encrypted data from localStorage, and the other for the data to be encrypted.
 
 Then it will set the encrypted keys and the encrypted value to localStorage.
 
-Below is a table to show the relationship between the provided key, the encrypted keys, and the encrypted value in localStorage:
+Below is a table to show the relationship between the provided key, the encrypted keys, and the encrypted data in localStorage:
 
-| Key          | Value                          |
-| ------------ | ------------------------------ |
-| provided key | [item, secretKeyToDecryptData] |
-| item         | data                           |
+| Key          | Value                                          |
+| ------------ | ---------------------------------------------- |
+| provided key | encrypted keys: [item, secretKeyToDecryptData] |
+| item         | encrypted data                                 |
 
 ```js
 /**
