@@ -20,7 +20,9 @@
     "prepare": "is-ci || husky install"
   },
   "keywords": [
-    "emqx"
+    "emqx",
+    "localStorage",
+    "obfuscation"
   ],
   "author": "Yue Yang <g1enyy0ung@gmail.com>",
   "license": "Apache-2.0",
