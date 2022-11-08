@@ -16,7 +16,8 @@
   },
   "scripts": {
     "build": "vite build",
-    "test": "vitest"
+    "test": "vitest",
+    "prepare": "is-ci || husky install"
   },
   "keywords": [
     "emqx"
@@ -27,7 +28,14 @@
     "crypto-js": "^4.1.1"
   },
   "devDependencies": {
+    "husky": "^8.0.2",
+    "is-ci": "^3.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
     "vite": "^3.2.2",
     "vitest": "^0.24.5"
+  },
+  "lint-staged": {
+    "*.(js|md)": "prettier --write"
   }
 }
