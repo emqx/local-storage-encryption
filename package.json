@@ -17,7 +17,8 @@
   "scripts": {
     "build": "vite build",
     "test": "vitest",
-    "prepare": "is-ci || husky install"
+    "prepare": "is-ci || husky install",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "emqx",
