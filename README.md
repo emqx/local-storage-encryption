@@ -98,10 +98,10 @@ Below is a table to show the relationship between the provided key, the encrypte
  */
 
 /**
- * Result represents the result of encryption, includes
+ * EncryptResult represents the result of encryption, includes
  * the secret key and the encrypted data.
  *
- * @typedef {object} Result
+ * @typedef {object} EncryptResult
  * @prop {string} key
  * @prop {string} data
  */
@@ -111,7 +111,7 @@ Below is a table to show the relationship between the provided key, the encrypte
  *
  * @param {object} options
  * @param {providerFN[]} options.providers
- * @returns {Promise<Result[]>}
+ * @returns {Promise<EncryptResult[]>}
  */
 ```
 

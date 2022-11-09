@@ -4,9 +4,11 @@
   "description": "Obfuscate key-value pairs in localStorage.",
   "type": "module",
   "files": [
-    "dist"
+    "dist",
+    "index.d.ts"
   ],
   "main": "./dist/local-storage-encryption.umd.js",
+  "types": "./index.d.ts",
   "module": "./dist/local-storage-encryption.es.js",
   "exports": {
     ".": {
