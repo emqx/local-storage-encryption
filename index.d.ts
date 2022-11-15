@@ -12,6 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+class LocalStorage {
+  static ls: Storage
+
+  static set backend(storage: Storage): void
+  static get(key: string): string | null
+  static getObj(key: string): unknown
+  static set(key: string, value: string): void
+  static setObj(key: string, value: any): void
+  static remove(key: string): void
+}
+
+export const storage: LocalStorage
+
 type ProviderFN = <T = unknown>() => Promise<string, T>
 
 interface EncryptOptions {
