@@ -72,6 +72,20 @@ clear(keyToGetUserInfo)
 
 ## API
 
+### storage
+
+Although this package is used to obfuscate data in localStorage, it can also be used to obfuscate data in other backends
+that implement the `Storage` interface of the [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API).
+For example, you can use `sessionStorage` instead of `localStorage`:
+
+```js
+import { storage } from '@emqx/local-storage-encryption'
+
+storage.backend = window.sessionStorage
+
+// Then all other APIs will use sessionStorage instead of localStorage.
+```
+
 ### encrypt
 
 `encrypt` is used to encrypt the data and set the encrypted data to localStorage.
