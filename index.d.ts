@@ -23,9 +23,9 @@ declare class LocalStorage {
   static remove(key: string): void
 }
 
-export const storage: LocalStorage
+export const storage = LocalStorage
 
-type ProviderFN = <T = unknown>() => Promise<[string, T]>
+type ProviderFN = () => Promise<[string, unknown]>
 
 interface EncryptOptions {
   providers: ProviderFN[]
