@@ -1,5 +1,7 @@
 # @emqx/local-storage-encryption
 
+[![CI](https://github.com/emqx/local-storage-encryption/actions/workflows/ci.yaml/badge.svg)](https://github.com/emqx/local-storage-encryption/actions/workflows/ci.yaml)
+
 Obfuscate key-value pairs in localStorage.
 
 ## installation
