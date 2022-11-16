@@ -13,17 +13,21 @@
 // limitations under the License.
 
 declare class LocalStorage {
-  static ls: Storage
-
   static set backend(storage: Storage)
-  static get(key: string): string | null
-  static getObj(key: string): unknown
-  static set(key: string, value: string): void
-  static setObj(key: string, value: any): void
-  static remove(key: string): void
 }
 
 export const storage = LocalStorage
+
+interface EncryptionMethods {
+  encrypt: (message: string, key: string) => string
+  decrypt: (data: string, key: string) => string
+}
+
+declare class Encryption {
+  static set use(encryption: EncryptionMethods)
+}
+
+export const encryption = Encryption
 
 type ProviderFN = () => Promise<[string, unknown]>
 

@@ -9,10 +9,8 @@ specifiers:
   vite: ^3.2.2
   vitest: ^0.24.5
 
-dependencies:
-  crypto-js: 4.1.1
-
 devDependencies:
+  crypto-js: 4.1.1
   husky: 8.0.2
   is-ci: 3.0.1
   lint-staged: 13.0.3
@@ -193,7 +191,7 @@ packages:
 
   /crypto-js/4.1.1:
     resolution: {integrity: sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw==}
-    dev: false
+    dev: true
 
   /debug/4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
