@@ -6,6 +6,17 @@ Obfuscate key-value pairs in localStorage.
 
 ## installation
 
+> Starting with v1.0.0, you will need to provide your own encryption methods to use this package.
+>
+> For example:
+>
+> `npm install crypto-js`
+>
+> For more details, see:
+>
+> - [How to use](#how-to-use)
+> - [encryption](#encryption)
+
 ```bash
 npm install @emqx/local-storage-encryption
 ```
@@ -43,7 +54,17 @@ This package can be used to obfuscate data like this.
 Below is an example to encrypt the username and password:
 
 ```js
-import { encrypt, decrypt } from '@emqx/local-storage-encryption'
+import { encrypt, decrypt, encryption } from '@emqx/local-storage-encryption'
+// Suppose you will use crypto-js/aes to encrypt data.
+import AES from 'crypto-js/aes'
+import encUtf8 from 'crypto-js/enc-utf8'
+
+const encryptionMethods = {
+  encrypt: (message, key) => AES.encrypt(message, key).toString(),
+  decrypt: (data, key) => AES.decrypt(data, key).toString(encUtf8),
+}
+
+encryption.use = encryptionMethods
 
 const keyToGetUserInfo = 'l4v1n'
 
@@ -87,6 +108,34 @@ storage.backend = window.sessionStorage
 
 // Then all other APIs will use sessionStorage instead of localStorage.
 ```
+
+### encryption
+
+Before v1.0.0, this package used `crypto-js/aes` to encrypt data. But now you need to provide your own encryption methods to use this package. Below is an example:
+
+```js
+import { encryption } from '@emqx/local-storage-encryption'
+import AES from 'crypto-js/aes'
+import encUtf8 from 'crypto-js/enc-utf8'
+
+const encryptionMethods = {
+  encrypt: (message, key) => AES.encrypt(message, key).toString(),
+  decrypt: (data, key) => AES.decrypt(data, key).toString(encUtf8),
+}
+
+encryption.use = encryptionMethods
+```
+
+The `encryption.use` receives an object with two fields: `encrypt` and `decrypt`.
+The `encrypt` function is used to encrypt the `message` with the `key`. The `decrypt` function is used to decrypt the `data` with the `key`.
+Both of them should return a string.
+
+Please note that `encryption.use` is only compatible with the **Cipher Algorithms** format. For example, `crypto-js/aes` is a Cipher Algorithm, but `crypto-js/md5` is not.
+Assuming you want to use `crypto-js/md5` as the encryption method, you need to be compatible with the API yourself.
+
+You can refer to <https://cryptojs.gitbook.io/docs/#ciphers> to see how to define your encryption methods.
+
+This change increases the flexibility of the package, facilitates its integration with existing systems and reduces the final package size.
 
 ### encrypt
 
