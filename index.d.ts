@@ -16,7 +16,7 @@ declare class LocalStorage {
   static set backend(storage: Storage)
 }
 
-export const storage: LocalStorage
+export const storage: typeof LocalStorage
 
 interface EncryptionMethods {
   encrypt: (message: string, key: string) => string
@@ -27,7 +27,7 @@ declare class Encryption {
   static set use(encryption: EncryptionMethods)
 }
 
-export const encryption: Encryption
+export const encryption: typeof Encryption
 
 type ProviderFN = () => Promise<[string, unknown]>
 

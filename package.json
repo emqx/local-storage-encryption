@@ -1,6 +1,6 @@
 {
   "name": "@emqx/local-storage-encryption",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0-beta.1",
   "description": "Obfuscate key-value pairs in localStorage.",
   "type": "module",
   "files": [
