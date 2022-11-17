@@ -6,13 +6,13 @@ Obfuscate key-value pairs in localStorage.
 
 ## installation
 
-> Starting with v1.0.0, you will need to provide your own encryption methods to use this package.
+> Starting with `v1.0.0`, you will need to provide your own encryption methods to use this package.
 >
 > For example:
 >
 > `npm install crypto-js`
 >
-> For more details, see:
+> For more details, please refer to:
 >
 > - [How to use](#how-to-use)
 > - [encryption](#encryption)
@@ -55,7 +55,7 @@ Below is an example to encrypt the username and password:
 
 ```js
 import { encrypt, decrypt, encryption } from '@emqx/local-storage-encryption'
-// Suppose you will use crypto-js/aes to encrypt data.
+// Suppose you will use `crypto-js/aes` to encrypt data.
 import AES from 'crypto-js/aes'
 import encUtf8 from 'crypto-js/enc-utf8'
 
@@ -111,7 +111,7 @@ storage.backend = window.sessionStorage
 
 ### encryption
 
-Before v1.0.0, this package used `crypto-js/aes` to encrypt data. But now you need to provide your own encryption methods to use this package. Below is an example:
+Before `v1.0.0`, this package used `crypto-js/aes` to encrypt data. But now you need to provide your own encryption methods to use this package. Below is an example:
 
 ```js
 import { encryption } from '@emqx/local-storage-encryption'
@@ -124,6 +124,8 @@ const encryptionMethods = {
 }
 
 encryption.use = encryptionMethods
+
+// Then encrypt.
 ```
 
 The `encryption.use` receives an object with two fields: `encrypt` and `decrypt`.
