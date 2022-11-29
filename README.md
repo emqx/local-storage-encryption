@@ -1,6 +1,7 @@
 # @emqx/local-storage-encryption
 
 [![CI](https://github.com/emqx/local-storage-encryption/actions/workflows/ci.yaml/badge.svg)](https://github.com/emqx/local-storage-encryption/actions/workflows/ci.yaml)
+![npm (scoped)](https://img.shields.io/npm/v/@emqx/local-storage-encryption)
 
 Obfuscate key-value pairs in localStorage.
 
